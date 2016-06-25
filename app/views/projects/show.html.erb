@@ -21,7 +21,7 @@
   <% @project.tasks.each do |task|%>
   <li>
     <!-- Using task_done#{@task.id} in this way each checkbox will be different -->
-    <%= check_box_tag "task_done_#{task.id}", "", task.done %>
+    <%= check_box_tag "task_done_#{task.id}", "", task.done, class: "task_done", data: { id: task.id } %>
     <%= link_to task.title, task%>
   </li>
   <% end %>
