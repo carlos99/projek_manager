@@ -51,6 +51,7 @@ class TasksController < ApplicationController
 
   def toggle
     @task.toggle(:done).save
+    TaskMailer.confirm_task(@task).deliver_now
     head 204 #No Content
   end
 
