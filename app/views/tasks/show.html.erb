@@ -22,3 +22,21 @@
     </blockquote>
   <% end %>
 </ol>
+
+<%= form_for([@task, @task.comments.build]) do |f| %>
+  <p>
+    <%= f.text_field :name, placeholder: "Name" %>
+  </p>
+
+  <p>
+    <%= f.email_field :email, placeholder: "Email" %>
+  </p>
+
+  <p>
+    <%= f.text_area :body%>
+  </p>
+
+  <p>
+    <%= f.submit%>
+  </p>
+<% end %>
